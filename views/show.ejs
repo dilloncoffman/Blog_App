@@ -12,6 +12,10 @@
                  <!-- Using a "-" instead of "=" allows for users to enter runnable code of their ie. p tags or strong tags -->
                 <p><%- blog.body %></p>
             </div>
+            <a class="ui yellow basic button" href="/blogs/<%= blog._id %>/edit">Edit</a>
+            <form id="delete" action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">
+                <button class="ui red basic button">Delete</button>
+            </form>
         </div>
     </div>
 </div>
