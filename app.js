@@ -43,7 +43,6 @@ app.get("/blogs/new", function(req, res){
 
 // CREATE ROUTE
 app.post("/blogs", function(req, res){
-    //create blog
     Blog.create(req.body.blog, function(err, newBlog){
         if(err){
             res.render("new");
@@ -51,7 +50,18 @@ app.post("/blogs", function(req, res){
             res.redirect("/blogs");
         }
     });
-    //then, redirect to index
+});
+
+// SHOW ROUTE
+app.get("/blogs/:id", function(req, res) {
+    Blog.findById(req.params.id, function(err, foundBlog){
+        if(err) {
+            res.redirect("/blogs");
+        } else {
+            res.render("show", {blog: foundBlog});
+            
+        }
+    });
 });
 
 
