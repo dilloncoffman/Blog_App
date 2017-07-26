@@ -2,6 +2,10 @@ i.icon {
     font-size: 2em;
 }
 
+i.right.chevron.icon {
+    padding-top: 6px;
+}
+
 .container.main {
     margin-top: 7.0em;
 }
